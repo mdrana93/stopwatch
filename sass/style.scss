@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&family=Roboto:wght@300;400&display=swap");
+
+$color: #546de5;
+$color-2: #fff;
+$fontColor: #f3f3f3;
+
+/**** ============== 
+Variable css =========== ****/
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background: $color;
+  font-family: "Poppins", sans-serif;
+  height: 100vh;
+}
+
+/**** ============== 
+Common css =========== ****/
+
+@mixin transition {
+  transition: all 0.8s ease-in-out;
+}
+
+@mixin corners($radius) {
+  border-radius: $radius;
+}
+/**** ============== 
+Mixin css =========== ****/
+
+.wrapper {
+  width: 80%;
+  margin: auto;
+  color: $color-2;
+  text-align: center;
+  padding-top: 10%;
+}
+h1 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  @media (max-width: 387px) {
+    font-size: 2rem;
+  }
+}
+h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  @media (max-width: 387px) {
+    font-size: 1.5rem;
+  }
+}
+#seconds,
+#tens {
+  font-size: 2rem;
+}
+button {
+  @include corners(5px);
+  background: $color;
+  color: $color-2;
+  border: solid 1px $color-2;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 1.2em;
+  padding: 18px 10px;
+  width: 180px;
+  margin: 10px;
+  outline: none;
+  &:hover {
+    @include transition;
+    background: $color-2;
+    border: solid 1px $color-2;
+    color: $color;
+  }
+}
